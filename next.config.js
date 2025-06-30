@@ -46,7 +46,7 @@ const nextConfig = {
   images: {
     domains: ['localhost'],
   },
-  output: 'standalone',
+  // output: 'standalone', // Comment out for Vercel (only needed for Docker deployments)
   compress: true,
   poweredByHeader: false,
   swcMinify: true,
