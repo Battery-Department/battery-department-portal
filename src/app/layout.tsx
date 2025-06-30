@@ -18,7 +18,9 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://batterydepartment.com'),
+  metadataBase: process.env.NEXT_PUBLIC_APP_URL && process.env.NEXT_PUBLIC_APP_URL.startsWith('http') 
+    ? new URL(process.env.NEXT_PUBLIC_APP_URL)
+    : new URL('https://batterydepartment.com'),
   openGraph: {
     title: 'Battery Department - Professional Power Solutions',
     description: 'Premium battery solutions for professionals and contractors',

@@ -85,7 +85,7 @@ export class StripePaymentService {
     try {
       const intent = await stripe.paymentIntents.confirm(input.paymentIntentId, {
         payment_method: input.paymentMethodId,
-        return_url: input.returnUrl || `${process.env.NEXT_PUBLIC_APP_URL}/customer/orders`
+        return_url: input.returnUrl || (process.env.NEXT_PUBLIC_APP_URL ? `${process.env.NEXT_PUBLIC_APP_URL}/customer/orders` : 'https://batterydepartment.com/customer/orders')
       })
 
       return {
