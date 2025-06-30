@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 export function useAnimation() {
   return {
     animate: () => {},
@@ -7,22 +9,27 @@ export function useAnimation() {
 
 export function useRipple() {
   return {
-    rippleProps: {},
-    triggerRipple: () => {}
+    createRipple: (event: React.MouseEvent) => {},
+    rippleElements: null
   };
 }
 
 export function useHover() {
   return {
-    hovered: false,
-    hoverProps: {}
+    isHovered: false,
+    hoverProps: {},
+    getHoverStyle: (baseStyle: React.CSSProperties, hoverStyle: React.CSSProperties) => baseStyle
   };
 }
 
 export function useFocus() {
   return {
-    focused: false,
-    focusProps: {}
+    isFocused: false,
+    focusProps: {
+      onFocus: () => {},
+      onBlur: () => {}
+    },
+    getFocusStyle: (baseStyle: React.CSSProperties) => baseStyle
   };
 }
 
