@@ -66,6 +66,6 @@ services:
 
 databases:
   - name: battery-department-db
-    plan: starter
+    plan: free
     databaseName: battery_department
     user: battery_user
