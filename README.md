@@ -2,6 +2,8 @@
 
 A modern, self-serve battery marketplace built with Next.js, TypeScript, and Stripe integration.
 
+**Deployment Status**: Ready for production
+
 ## 🌟 Features
 
 - **Product Catalog**: Browse and compare battery products
