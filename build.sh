@@ -13,9 +13,13 @@ npm ci
 echo "🔧 Generating Prisma client..."
 npx prisma generate
 
-# Run database migrations in production
-echo "🗄️ Running database migrations..."
-npx prisma migrate deploy
+# Check if DATABASE_URL is set and not empty before running migrations
+if [ -n "$DATABASE_URL" ]; then
+    echo "🗄️ Running database migrations..."
+    npx prisma migrate deploy
+else
+    echo "⚠️ Skipping database migrations (DATABASE_URL not set)"
+fi
 
 # Run type checking
 echo "🔍 Type checking..."
